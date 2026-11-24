@@ -17,6 +17,3 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
-
-# CNAME re-added at launch, once DNS points at GitHub
-public/CNAME.disabled

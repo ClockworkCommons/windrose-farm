@@ -2,6 +2,15 @@
 import Base from '../layouts/Base.astro';
 import { Image } from 'astro:assets';
 import shedPhoto from '../assets/photos/shed-solar.webp';
+import soilTrench from '../assets/photos/soil-trench-bedrock.jpg';
+import soilMeter from '../assets/photos/soil-ph-meter.jpg';
+import trenchRun from '../assets/photos/trench-run.jpg';
+import logsStaged from '../assets/photos/logs-staged.jpg';
+import waterTanks from '../assets/photos/water-tanks-solar.jpg';
+import barnTractor from '../assets/photos/barn-tractor.jpg';
+
+const duoW = [420, 700, 1100];
+const duoS = '(max-width: 40rem) 100vw, 32rem';
 ---
 <Base title="The Land — Windrose Farm" description="37 acres of Arizona high desert at 5,700 feet: shallow rocky soil, 12 inches of rain, and a patient plan to build abundance anyway.">
   <section class="wrap article-header">
@@ -41,6 +50,32 @@ import shedPhoto from '../assets/photos/shed-solar.webp';
         hard ground instead of glossing over it is exactly the kind of honesty
         this farm is built on.
       </p>
+      <div class="photo-duo">
+        <figure>
+          <Image
+            src={soilTrench}
+            alt="A trench wall in red soil showing a hard pale caliche layer roughly a foot below the surface, with loose rock beneath it"
+            widths={duoW}
+            sizes={duoS}
+          />
+          <figcaption>
+            The survey, confirmed by shovel. That pale band about a foot down is
+            where roots stop and the real work begins.
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={soilMeter}
+            alt="A handheld soil meter pushed into dry red soil, its display reading in the low eighties"
+            widths={duoW}
+            sizes={duoS}
+          />
+          <figcaption>
+            Testing across the production zone. Readings like these are why
+            elemental sulfur is on the autumn list.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -70,6 +105,32 @@ import shedPhoto from '../assets/photos/shed-solar.webp';
         off the well — so the farm survives a weekend of absence without loss.
       </li>
     </ul>
+    <div class="photo-duo">
+      <figure>
+        <Image
+          src={trenchRun}
+          alt="A narrow trench cut in a long straight line through red soil and dry grass"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          Trenching the water line. Every foot of this is cut through the same
+          rock the soil survey warned about.
+        </figcaption>
+      </figure>
+      <figure>
+        <Image
+          src={logsStaged}
+          alt="Felled ponderosa and juniper logs lying staged on open ground, waiting to be buried"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          Ponderosa and juniper cut on the property, staged for the first
+          hügelkultur mound — wood the land grew, going back into the land.
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section-alt">
@@ -115,6 +176,32 @@ import shedPhoto from '../assets/photos/shed-solar.webp';
       <li><strong>Kubota BX23S tractor</strong> for the land work — subsoiling, mound-building, grading</li>
       <li><strong>Starlink</strong>, because even a homestead measured in decades likes a weather radar</li>
     </ul>
+    <div class="photo-duo">
+      <figure>
+        <Image
+          src={waterTanks}
+          alt="Two black water storage tanks standing beside a timber-framed solar array in open grassland"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          Storage and generation side by side — 5,000 gallons of buffer and the
+          panels that move it.
+        </figcaption>
+      </figure>
+      <figure>
+        <Image
+          src={barnTractor}
+          alt="The Kubota tractor parked inside the open barn, seen through the wide doorway"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          The Kubota BX23S, which does the subsoiling, the trenching, and most
+          of the mound-building.
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section-alt">

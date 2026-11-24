@@ -1,5 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import hoopHouse from '../assets/photos/hoop-house.jpg';
+import shedSolarArray from '../assets/photos/shed-solar-array.jpg';
+
+const duoW = [420, 700, 1100];
+const duoS = '(max-width: 40rem) 100vw, 32rem';
 ---
 <Base title="The Farm — Windrose Farm" description="The four focus areas of Windrose Farm: an organic apiary, organic gardens, a high-desert orchard, and a small vineyard — designed as one interconnected system.">
   <section class="wrap article-header">
@@ -47,6 +53,18 @@ import Base from '../layouts/Base.astro';
       while continually improving soil health — every season's garden should
       leave the ground better than it found it.
     </p>
+    <figure class="snapshot">
+      <Image
+        src={hoopHouse}
+        alt="The bare steel hoop frame of a greenhouse standing in open ground, its covering not yet fitted"
+        widths={duoW}
+        sizes={duoS}
+      />
+      <figcaption>
+        The hoop house frame, waiting on its cover. At 5,700 feet with a
+        120-day season, protected growing space buys weeks at both ends.
+      </figcaption>
+    </figure>
   </section>
 
   <section class="section-alt">
@@ -94,6 +112,18 @@ import Base from '../layouts/Base.astro';
         <li>Native plants support wildlife.</li>
         <li>Solar power supports off-grid infrastructure.</li>
       </ul>
+      <figure class="snapshot" style="max-width: var(--measure);">
+        <Image
+          src={shedSolarArray}
+          alt="Solar panels mounted along the green metal roof of the red machine shed under a clear sky"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          The machine shed carries the array that runs the well pump, the
+          irrigation timers, and eventually the barn.
+        </figcaption>
+      </figure>
     </div>
   </section>
 </Base>

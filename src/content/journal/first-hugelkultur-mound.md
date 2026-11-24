@@ -10,6 +10,11 @@ and the machine shed — chosen deliberately, because it's close to the
 staged logs, close to water, and sheltered enough to give a first
 experiment a fair chance.
 
+![Ponderosa and juniper logs staged on open ground](../../assets/photos/logs-staged.jpg)
+
+*The raw material, staged and waiting. Every log on this pile was cut on the
+property.*
+
 ## The recipe
 
 The core of the mound is ponderosa pine and juniper cut on the property —

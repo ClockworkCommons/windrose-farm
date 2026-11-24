@@ -14,6 +14,11 @@ inches down, water infiltrates very slowly, the soil is heavy with calcium
 carbonate (very alkaline), and the top five feet of ground can hold roughly
 an inch and a half of available water. Total.
 
+![A trench wall showing a hard pale caliche layer about a foot below the surface](../../assets/photos/soil-trench-bedrock.jpg)
+
+*What the survey looks like from inside a trench. The pale band is the hardpan
+the numbers were describing.*
+
 It would be easy to gloss over this and post pretty pictures of seedlings.
 But that number — 1.2 to 1.7 inches of available water — is the single most
 important fact about this property, and pretending otherwise would make
@@ -33,6 +38,10 @@ the latter.
 - **Plant selection** got stricter. Everything on the list — asparagus,
   jujube, cold-hardy apples, seaberry, lavender — earns its place by
   actually tolerating alkaline, shallow, dry ground.
+
+![A handheld soil meter reading in dry red ground](../../assets/photos/soil-ph-meter.jpg)
+
+*Spot-testing across the production zone before deciding where anything goes.*
 
 ## The quiet upside
 

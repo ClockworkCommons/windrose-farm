@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+
+import sunsetTurbines from '../assets/photos/sunset-turbines.jpg';
+import barnSunset from '../assets/photos/barn-sunset.jpg';
+import sunsetWindow from '../assets/photos/sunset-window.jpg';
+import goldenClouds from '../assets/photos/golden-clouds.jpg';
+import milkyWay from '../assets/photos/milky-way.jpg';
+import snowGutter from '../assets/photos/snow-gutter.jpg';
+import wildflowers from '../assets/photos/wildflowers-yellow.jpg';
+import paintbrush from '../assets/photos/paintbrush.jpg';
+import primrose from '../assets/photos/primrose.jpg';
+import tracks from '../assets/photos/animal-tracks.jpg';
+import campfire from '../assets/photos/campfire.jpg';
+
+const sizes = '(max-width: 40rem) 100vw, (max-width: 72rem) 50vw, 22rem';
+const widths = [420, 700, 1100];
+---
+<Base
+  title="The Seasons — Windrose Farm"
+  description="A year on 37 acres of Arizona high desert: spring wildflowers, monsoon skies, winter frost, and some of the darkest night skies in the country."
+>
+  <section class="wrap article-header">
+    <p class="eyebrow">The Seasons</p>
+    <h1>A year on the land</h1>
+    <p class="prose" style="color: var(--ink-soft);">
+      Before anything is planted, the first job is to pay attention. These are
+      the things the land does on its own — the blooms it produces without
+      being asked, the storms that cross it, the animals that walk through at
+      night, and the sky it gets to keep because nobody out here has built
+      anything bright enough to spoil it.
+    </p>
+  </section>
+
+  <section class="wrap" style="padding-top: 0;">
+    <div class="season-head">
+      <p class="eyebrow">Spring</p>
+      <h2>What grows here anyway</h2>
+      <p class="prose">
+        The soil survey says this ground holds barely an inch and a half of
+        available water. Every spring it answers back. None of these were
+        planted, watered, or tended by us — they simply live here, which is the
+        most encouraging thing a difficult piece of land can tell you.
+      </p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <Image src={wildflowers} alt="A spray of yellow wildflowers blooming low against red desert soil" widths={widths} sizes={sizes} />
+        <figcaption><b>Volunteers</b>Yellow blooms coming up through gravel, entirely unassisted.</figcaption>
+      </figure>
+      <figure class="portrait">
+        <Image src={paintbrush} alt="Scarlet Indian paintbrush flowering among dry grass and red soil" widths={widths} sizes={sizes} />
+        <figcaption><b>Indian paintbrush</b>A plant that roots partly on its neighbours — cooperation as a survival strategy.</figcaption>
+      </figure>
+      <figure class="portrait">
+        <Image src={primrose} alt="White evening primrose blossoms open against rocky red ground" widths={widths} sizes={sizes} />
+        <figcaption><b>Evening primrose</b>Opens at dusk, closes by mid-morning. You have to be here at the right hour.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="season-head" style="margin-top: 0;">
+        <p class="eyebrow">Summer &amp; Monsoon</p>
+        <h2>Weather worth watching</h2>
+        <p class="prose">
+          Roughly twelve inches of rain a year arrives mostly in a few dramatic
+          weeks. Watching exactly where that water runs is not idle
+          sightseeing — it is the survey that decides where every swale gets cut.
+        </p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <Image src={goldenClouds} alt="Low sun lighting a bank of storm clouds gold above the high desert horizon" widths={widths} sizes={sizes} />
+          <figcaption><b>Storm light</b>The kind of sky that arrives before the monsoon does its work.</figcaption>
+        </figure>
+        <figure>
+          <Image src={sunsetTurbines} alt="Rows of wind turbines silhouetted along the horizon against a deep orange sunset" widths={widths} sizes={sizes} />
+          <figcaption><b>The windrose, literally</b>The turbines on the horizon harvest the same prevailing wind the farm is named for.</figcaption>
+        </figure>
+        <figure>
+          <Image src={barnSunset} alt="The barn silhouetted against a vivid orange and pink sunset, its windows catching the last light" widths={widths} sizes={sizes} />
+          <figcaption><b>Last light on the barn</b>Six o'clock, looking west across the developed area.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="season-head" style="margin-top: 0;">
+      <p class="eyebrow">Autumn &amp; Winter</p>
+      <h2>The quiet half of the year</h2>
+      <p class="prose">
+        Cold winters are part of the deal at 5,700 feet — and they are also why
+        the planting list looks the way it does. Jujube, apples and asparagus
+        all want a real dormancy. The cold is not an obstacle to work around;
+        it is a requirement several of these crops insist on.
+      </p>
+    </div>
+    <div class="gallery">
+      <figure class="portrait">
+        <Image src={snowGutter} alt="A line of snow resting along the barn's gutter and roof edge under a clear sky" widths={widths} sizes={sizes} />
+        <figcaption><b>Snow on the gutter</b>Winter moisture, arriving slowly enough that the ground can actually take it in.</figcaption>
+      </figure>
+      <figure>
+        <Image src={sunsetWindow} alt="A sunset reflected whole in a window set into the barn's red metal siding" widths={widths} sizes={sizes} />
+        <figcaption><b>Borrowed sky</b>The whole sunset, reflected in a barn window.</figcaption>
+      </figure>
+      <figure class="portrait">
+        <Image src={tracks} alt="Animal paw prints pressed into soft dirt beside a boot for scale" widths={widths} sizes={sizes} />
+        <figcaption><b>Night traffic</b>Tracks across the drive — a reminder whose land this was first.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="season-head" style="margin-top: 0;">
+        <p class="eyebrow">After Dark</p>
+        <h2>The sky we get to keep</h2>
+        <p class="prose">
+          There is no town close enough to wash out the stars. On a clear
+          moonless night the Milky Way is plainly visible overhead — an
+          unglamorous consequence of being a long way from everything, and one
+          of the best things about the place.
+        </p>
+      </div>
+      <div class="gallery">
+        <figure class="portrait">
+          <Image src={milkyWay} alt="The Milky Way arching across a dense field of stars in a completely dark sky" widths={widths} sizes={sizes} />
+          <figcaption><b>Milky Way</b>Straight up, no telescope, no filter.</figcaption>
+        </figure>
+        <figure>
+          <Image src={campfire} alt="A fire burning in a steel fire pit at dusk beside a camper, under a cloud-streaked sky" widths={widths} sizes={sizes} />
+          <figcaption><b>Why we come out</b>"A gathering place for family and friends" — this is what that looks like so far.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="prose" style="color: var(--ink-soft);">
+      More will be added as the years go by — the first blossom, the first
+      harvest, the first hive. That is rather the point of a project measured
+      in decades. Follow along in <a href="/journal/">the journal</a>.
+    </p>
+  </section>
+</Base>

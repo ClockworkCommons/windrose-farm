@@ -17,3 +17,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# photo staging area at the repo root -- originals and zips live here.
+# Leading slash matters: a bare "photos/" would also ignore src/assets/photos.
+/photos/

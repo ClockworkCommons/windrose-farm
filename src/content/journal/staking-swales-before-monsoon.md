@@ -14,6 +14,11 @@ The swales are our answer: shallow channels cut on contour, staked out
 with a level, meant to catch that water mid-flight and hold it long
 enough to soak in around the planting zones.
 
+![The tractor cutting a trench line through red soil](../../assets/photos/tractor-trenching.jpg)
+
+*The Kubota doing the heavy work. Cutting on contour is slow going in ground
+this rocky.*
+
 ## Designed to be corrected
 
 Here's the part of the plan we're most confident in: we assume we got

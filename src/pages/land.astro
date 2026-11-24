@@ -4,7 +4,9 @@ import { Image } from 'astro:assets';
 import shedPhoto from '../assets/photos/shed-solar.webp';
 import soilTrench from '../assets/photos/soil-trench-bedrock.jpg';
 import soilMeter from '../assets/photos/soil-ph-meter.jpg';
+import soilInHand from '../assets/photos/soil-in-hand.jpg';
 import trenchRun from '../assets/photos/trench-run.jpg';
+import tractorTrenching from '../assets/photos/tractor-trenching.jpg';
 import logsStaged from '../assets/photos/logs-staged.jpg';
 import waterTanks from '../assets/photos/water-tanks-solar.jpg';
 import barnTractor from '../assets/photos/barn-tractor.jpg';
@@ -65,6 +67,18 @@ const duoS = '(max-width: 40rem) 100vw, 32rem';
         </figure>
         <figure>
           <Image
+            src={soilInHand}
+            alt="A gloved hand holding a scoop of dry, rocky red soil above the ground it came from"
+            widths={duoW}
+            sizes={duoS}
+          />
+          <figcaption>
+            What comes up on a shovel: more gravel than loam, and very little
+            organic matter holding it together.
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
             src={soilMeter}
             alt="A handheld soil meter pushed into dry red soil, its display reading in the low eighties"
             widths={duoW}
@@ -90,8 +104,9 @@ const duoS = '(max-width: 40rem) 100vw, 32rem';
         the developed area — and the swales follow that grain.
       </li>
       <li>
-        <strong>Hügelkultur mounds</strong>, built from on-site ponderosa pine and
-        juniper logs, soaked and capped with native soil, create raised,
+        <strong>Hügelkultur mounds</strong>, built from ponderosa pine and juniper
+        logs — cut in a nearby forest by the previous owners and left here when
+        they went — soaked and capped with native soil, create raised,
         moisture-retentive beds that compensate for the shallow, rocky ground.
         The first prototype is going in between the barn and machine shed;
         its lessons will shape the larger orchard-edge system.
@@ -120,14 +135,27 @@ const duoS = '(max-width: 40rem) 100vw, 32rem';
       </figure>
       <figure>
         <Image
+          src={tractorTrenching}
+          alt="The small orange tractor cutting a trench line across open red ground"
+          widths={duoW}
+          sizes={duoS}
+        />
+        <figcaption>
+          The Kubota doing the digging. Cutting on contour is slow going in
+          ground this rocky.
+        </figcaption>
+      </figure>
+      <figure>
+        <Image
           src={logsStaged}
           alt="Felled ponderosa and juniper logs lying staged on open ground, waiting to be buried"
           widths={duoW}
           sizes={duoS}
         />
         <figcaption>
-          Ponderosa and juniper cut on the property, staged for the first
-          hügelkultur mound — wood the land grew, going back into the land.
+          Ponderosa and juniper, cut in a nearby forest by the previous owners
+          and left behind. They'll be buried in the hügelkultur mounds — an
+          inheritance we didn't ask for, put to work.
         </figcaption>
       </figure>
     </div>

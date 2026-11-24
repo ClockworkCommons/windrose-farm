@@ -1,6 +1,6 @@
 ---
 title: "Closing day"
-date: 2026-02-07
+date: 2025-12-30
 phase: "Beginnings"
 summary: "After years of looking, 37 acres of windswept Arizona high desert finally had our name on it. The honest word for how that felt is terrific."
 ---
@@ -12,6 +12,11 @@ you have been imagining for years, and the honest word for it is
 Not relieved — though there was some of that. Not proud, exactly. Something
 closer to the feeling of standing at the trailhead very early, with the
 whole day still ahead of you and nothing yet gone wrong.
+
+It happened on the thirtieth of December, which we did not plan and could
+not have improved on. Two days later the calendar turned over, and the first
+thing the new year contained was thirty-seven acres we were now responsible
+for.
 
 ![The barn standing on the ridgeline at Windrose Farm, with wind turbines turning on the horizon](../../assets/photos/barn-turbines-day.jpg)
 

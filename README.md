@@ -55,36 +55,33 @@ and `.photo-band` for a full-width edge-to-edge band (see the homepage).
 Put photos in `src/assets/`, not `public/` — only `src/assets/` gets
 optimized.
 
-## Deploying (GitHub Pages)
+## Deploying
 
-The site deploys itself: push to `main` and the workflow in
-`.github/workflows/deploy.yml` builds and publishes it.
+The site is live at **https://windrose.farm** and deploys itself: push to
+`main` and the workflow in `.github/workflows/deploy.yml` builds and
+publishes it. Nothing else to run.
 
-One-time setup:
+Setup already done (recorded here in case it ever needs rebuilding):
 
-1. Create a GitHub repo and push this folder to it.
-2. In the repo, go to **Settings -> Pages** and set **Source** to
-   **GitHub Actions** (not "Deploy from a branch").
-3. Still on that page, set the **Custom domain** to `windrose.farm`
-   and tick **Enforce HTTPS** once the certificate finishes issuing
-   (it can take a few minutes to an hour).
-4. At the domain registrar, point DNS at GitHub:
+- Repo: `github.com/ClockworkCommons/windrose-farm` (public -- GitHub Pages
+  on a private repo requires a paid plan)
+- **Settings -> Pages -> Source** is set to **GitHub Actions**. If this is
+  ever reset to "Deploy from a branch", every deploy fails at the last step
+  with the build still passing.
+- **Settings -> Pages -> Custom domain** is `windrose.farm`
+- DNS at Namecheap: four `A` records on `@` pointing to `185.199.108.153`
+  through `185.199.111.153`, plus a `CNAME` on `www` to
+  `clockworkcommons.github.io.`
+- `public/CNAME` holds the domain. **Do not delete it** -- an
+  Actions-based deploy that omits it drops the custom domain.
 
-   | Type  | Name  | Value |
-   |-------|-------|-------|
-   | A     | `@`   | `185.199.108.153` |
-   | A     | `@`   | `185.199.109.153` |
-   | A     | `@`   | `185.199.110.153` |
-   | A     | `@`   | `185.199.111.153` |
-   | CNAME | `www` | `<username>.github.io` |
+### A note on preview URLs
 
-`public/CNAME` keeps the custom domain attached across deploys -- leave
-it in place.
-
-Note: GitHub Pages on a **private** repo requires a paid GitHub plan. On
-the free plan the repo must be public, which means the site source
-(text and photos) is publicly readable. That is normal for a static
-site, but worth knowing before pushing.
+`astro.config.mjs` sets `site` to `https://windrose.farm` with no `base`,
+so pages reference assets from the domain root. That means the
+`clockworkcommons.github.io/windrose-farm/` address renders unstyled and
+without photos. That is expected, not a bug -- use `npm run dev` locally
+or the real domain.
 
 ## Structure
 

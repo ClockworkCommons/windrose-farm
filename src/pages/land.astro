@@ -1,0 +1,148 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import shedPhoto from '../assets/photos/shed-solar.webp';
+---
+<Base title="The Land — Windrose Farm" description="37 acres of Arizona high desert at 5,700 feet: shallow rocky soil, 12 inches of rain, and a patient plan to build abundance anyway.">
+  <section class="wrap article-header">
+    <p class="eyebrow">The Land</p>
+    <h1>Hard ground, honest plans</h1>
+    <p class="prose" style="color: var(--ink-soft);">
+      Many people would have seen an empty field. We saw possibility — and
+      then we did the soil survey, and saw exactly how much work possibility
+      was going to take.
+    </p>
+  </section>
+
+  <section class="wrap" style="padding-top: 0;">
+    <div class="fact-grid">
+      <div><span class="num">37</span><span class="label">acres</span></div>
+      <div><span class="num">5,700′</span><span class="label">elevation</span></div>
+      <div><span class="num">~130</span><span class="label">frost-free days</span></div>
+      <div><span class="num">~12″</span><span class="label">rain per year</span></div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap prose">
+      <p class="eyebrow">Soil</p>
+      <h2>The honest starting point</h2>
+      <p>
+        Per NRCS Web Soil Survey data, our dominant soils are the
+        Leanto&#8209;Bisoodi complex and the Mellenthin&#8209;Rock outcrop complex:
+        bedrock at 8–20 inches, very low infiltration, high calcium carbonate,
+        and roughly 1.2–1.7 inches of available water in the top 60 inches
+        of soil. That is not a footnote — it's a structural constraint.
+      </p>
+      <p>
+        It's also the reason the entire approach here is built around
+        <em>making</em> soil rather than assuming ground that's ready to plant:
+        hügelkultur mounds, contour swales, mulch, and compost. Working with
+        hard ground instead of glossing over it is exactly the kind of honesty
+        this farm is built on.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap prose">
+    <p class="eyebrow">Water &amp; Soil-Building</p>
+    <h2>Catching every drop, building every inch</h2>
+    <ul>
+      <li>
+        <strong>Contour swales</strong> are being staked and cut to intercept and slow
+        runoff before it sheets off the property, recharging the soil around
+        planting zones. The land falls gently east to west — about 40 feet across
+        the developed area — and the swales follow that grain.
+      </li>
+      <li>
+        <strong>Hügelkultur mounds</strong>, built from on-site ponderosa pine and
+        juniper logs, soaked and capped with native soil, create raised,
+        moisture-retentive beds that compensate for the shallow, rocky ground.
+        The first prototype is going in between the barn and machine shed;
+        its lessons will shape the larger orchard-edge system.
+      </li>
+      <li>
+        <strong>Rainwater catchment</strong> is planned off every roof into storage
+        tanks — meaningful supplementation at twelve inches of rain a year.
+      </li>
+      <li>
+        <strong>Irrigation runs from tank storage on timers</strong>, not directly
+        off the well — so the farm survives a weekend of absence without loss.
+      </li>
+    </ul>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap prose">
+      <p class="eyebrow">The Orchard Site</p>
+      <h2>Planting what wants to live here</h2>
+      <p>
+        The orchard is sited in a former horse exercise area — flat, upslope of
+        the barn and shed, next to existing water infrastructure, with a contour
+        swale planned along its uphill edge. The ground is likely compacted from
+        years of horses (subsoiling required) but potentially fertile from years
+        of manure. Every planting was chosen for alkaline, high-desert,
+        cold-winter conditions:
+      </p>
+      <ul>
+        <li><strong>Asparagus</strong> — the most alkaline-tolerant crop on the list, a 15–20 year productive lifespan, and the earliest harvest of the year</li>
+        <li><strong>Jujube</strong> — the standout pick; evolved for exactly these conditions, near-zero-maintenance once established, 50+ year lifespan</li>
+        <li><strong>Apples</strong> — cold-hardy varieties suited to the elevation</li>
+        <li><strong>Seaberry, elderberry &amp; aronia</strong> — an alkaline-tolerant berry layer</li>
+        <li><strong>Lavender</strong> — thrives in alkaline, well-drained soil, and doubles as bee forage</li>
+        <li><strong>Wild harvest</strong> — prickly pear and pinyon pine already grow here on their own</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap prose">
+    <p class="eyebrow">Infrastructure</p>
+    <h2>The bones of the place</h2>
+    <figure class="snapshot">
+      <Image
+        src={shedPhoto}
+        alt="The red machine shed with a row of solar panels on its green metal roof, under a clear high-desert sky"
+        widths={[640, 1024, 1600]}
+        sizes="(max-width: 72rem) 100vw, 66ch"
+      />
+      <figcaption>The machine shed, wearing the solar array that powers the working core of the farm.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>Off-grid solar</strong> centered on the machine shed — an EG4 18kPV inverter and 48V all-weather battery bank, with a buried feeder planned out to the barn</li>
+      <li><strong>Well &amp; water distribution</strong>, rebuilt from the ground up, feeding two 2,500-gallon storage tanks</li>
+      <li><strong>Barn</strong> with slab and infrastructure underway</li>
+      <li><strong>Machine shed</strong>, established and anchoring the working core of the property</li>
+      <li><strong>Kubota BX23S tractor</strong> for the land work — subsoiling, mound-building, grading</li>
+      <li><strong>Starlink</strong>, because even a homestead measured in decades likes a weather radar</li>
+    </ul>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <p class="eyebrow">The Roadmap</p>
+      <h2>Five phases, no hurry</h2>
+      <ol class="phase-list">
+        <li>
+          <b>Foundational work</b>
+          <p>Finish the well system, soil testing, stake and cut swales, build the first hügelkultur mound, fence the initial production zone.</p>
+        </li>
+        <li>
+          <b>Observation &amp; prep</b>
+          <p>Watch real water flow during monsoon storms and adjust. Consolidate barn-floor infrastructure. Fall soil prep — elemental sulfur, compost, mulch — and order bare-root orchard stock.</p>
+        </li>
+        <li>
+          <b>First plantings</b>
+          <p>Asparagus, jujube, and apples go in, watered by drip irrigation from tank storage.</p>
+        </li>
+        <li>
+          <b>Expansion — years 2–3</b>
+          <p>The berry layer and lavender. Phased perimeter fencing, native windbreaks, and chickens as orchard pest control once fencing and water are solid.</p>
+        </li>
+        <li>
+          <b>Long-term — years 3–10</b>
+          <p>Rainwater catchment off every roof. Bees, once orchard and lavender bloom can support them. Continued soil-building until the production zone runs largely on mulch and monsoon capture. Eventually, a dwelling and full energy independence.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('journal')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Journal — Windrose Farm" description="Field notes from Windrose Farm — successes, failures, and everything we're learning while building a regenerative farm in Arizona's high country.">
+  <section class="wrap article-header">
+    <p class="eyebrow">Journal</p>
+    <h1>Notes from the field</h1>
+    <p class="prose" style="color: var(--ink-soft);">
+      A running record of the farm as it takes shape — the experiments, the
+      weather, the wins, and the lessons. Some entries will report successes.
+      Others won't. Both are the point.
+    </p>
+  </section>
+
+  <section class="wrap" style="padding-top: 0;">
+    <ul class="entry-list">
+      {entries.map((e) => (
+        <li class="entry-card">
+          <time datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
+          {e.data.phase && <span class="entry-meta"> · {e.data.phase}</span>}
+          <h3><a href={`/journal/${e.id}/`}>{e.data.title}</a></h3>
+          <p>{e.data.summary}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

@@ -1,0 +1,27 @@
+---
+import Windrose from './Windrose.astro';
+
+const links = [
+  { href: '/story/', label: 'Our Story' },
+  { href: '/farm/', label: 'The Farm' },
+  { href: '/land/', label: 'The Land' },
+  { href: '/journal/', label: 'Journal' },
+];
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href.replace(/\/$/, ''));
+---
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand">
+      <Windrose />
+      <span class="brand-name">Windrose Farm</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {links.map((l) => (
+        <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

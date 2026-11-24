@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title={`${entry.data.title} — Windrose Farm Journal`} description={entry.data.summary}>
+  <article>
+    <header class="wrap article-header">
+      <p class="eyebrow">
+        <a href="/journal/" style="color: inherit; text-decoration: none;">Journal</a>
+        {entry.data.phase && ` · ${entry.data.phase}`}
+      </p>
+      <h1>{entry.data.title}</h1>
+      <time class="entry-meta" datetime={entry.data.date.toISOString()}>{fmt(entry.data.date)}</time>
+    </header>
+    <div class="wrap article-body prose">
+      <Content />
+      <hr class="rule" style="margin-block: 3rem;" />
+      <p><a href="/journal/">← Back to the journal</a></p>
+    </div>
+  </article>
+</Base>

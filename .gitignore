@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# generated PDF editions
+*.pdf
+
+# environment
+.env
+.env.*
+!.env.example
+
+# os / editor noise
+.DS_Store
+Thumbs.db
+*.log

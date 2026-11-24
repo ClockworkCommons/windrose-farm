@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import Windrose from '../components/Windrose.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import barnPhoto from '../assets/photos/barn-and-turbines.webp';
+
+const entries = (await getCollection('journal'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Windrose Farm — Growing in Nature's Direction">
+  <section class="hero wrap">
+    <Windrose />
+    <h1>Windrose Farm</h1>
+    <p class="motto">Growing in Nature's Direction.</p>
+    <p class="lede">
+      A family homestead and regenerative farm taking root on 37 acres of
+      windswept high desert in Arizona's high country — a project measured
+      in decades, not seasons.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="/story/">Read Our Story</a>
+      <a class="btn" href="/journal/">Follow the Journal</a>
+    </div>
+  </section>
+
+  <section class="mission section-alt">
+    <div class="wrap">
+      <p class="eyebrow">Our Mission</p>
+      <blockquote>
+        To cultivate healthy land, healthy food, and healthy community
+        through careful stewardship, regenerative agriculture, and a
+        lifelong commitment to learning.
+      </blockquote>
+    </div>
+  </section>
+
+  <figure class="photo-band">
+    <Image
+      src={barnPhoto}
+      alt="The red barn on the ridgeline at Windrose Farm, high-desert grassland in the foreground and wind turbines turning on the horizon"
+      widths={[640, 1024, 1600, 2000]}
+      sizes="100vw"
+      loading="eager"
+    />
+    <figcaption>The barn at 5,700 feet. The turbines on the horizon harvest the same wind that named the farm.</figcaption>
+  </figure>
+
+  <section class="wrap">
+    <p class="eyebrow">What We're Growing</p>
+    <h2>Four gardens of one ecosystem</h2>
+    <p class="prose">
+      Windrose Farm is designed as an interconnected system — bees pollinate
+      the orchard, the orchard feeds the bees, compost feeds the gardens, and
+      trees temper the wind. Every part strengthens the others.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="glyph">🐝</div>
+        <h3>Apiary</h3>
+        <p>Healthy honeybee colonies, raw local honey, beeswax, and habitat for native pollinators — the heart of the farm.</p>
+      </div>
+      <div class="card">
+        <div class="glyph">🌱</div>
+        <h3>Gardens</h3>
+        <p>Vegetables, herbs, and flowers grown with compost, drip irrigation, and companion planting — feeding the family while building the soil.</p>
+      </div>
+      <div class="card">
+        <div class="glyph">🍎</div>
+        <h3>Orchard</h3>
+        <p>Fruit and nut trees chosen for northern Arizona, woven together with pollinator habitat into a resilient little ecosystem.</p>
+      </div>
+      <div class="card">
+        <div class="glyph">🍇</div>
+        <h3>Vineyard</h3>
+        <p>A small vineyard for learning and small-batch winemaking — craftsmanship and enjoyment, not commerce.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <p class="eyebrow">How We Work</p>
+      <h2>Our values</h2>
+      <ul class="value-list">
+        <li><b>Stewardship</b> We are caretakers, not owners. Our responsibility is to leave the land healthier than we found it.</li>
+        <li><b>Sustainability</b> Practical, renewable, resilient solutions — solar power, water conservation, compost, healthy soils.</li>
+        <li><b>Organic Practices</b> Soil health, biodiversity, beneficial insects, and minimal synthetic chemicals, wherever practical.</li>
+        <li><b>Patience</b> Nature works in seasons and generations. So do we.</li>
+        <li><b>Curiosity</b> The farm is a living laboratory — continually learning, experimenting, observing, improving.</li>
+        <li><b>Family</b> Everything begins and ends with family. The farm exists to create memories and traditions across generations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dedication">
+    <div class="wrap">
+      <p class="eyebrow">Dedication</p>
+      <h2>For Aunt Rosie</h2>
+      <p>
+        Windrose Farm is lovingly dedicated to Aunt Rosie, whose lifelong
+        commitment to beekeeping, organic gardening, and caring for the land
+        helped inspire the vision for this farm. May every blossom visited by
+        our bees, every tree planted, and every harvest gathered honor the
+        quiet example she set. Her legacy continues to bloom at Windrose Farm.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">From the Journal</p>
+    <h2>Notes from the field</h2>
+    <p class="prose">
+      Some experiments will succeed. Others won't. We share both — because
+      honest learning is every bit as valuable as a successful harvest.
+    </p>
+    <ul class="entry-list">
+      {entries.map((e) => (
+        <li class="entry-card">
+          <time datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
+          <h3><a href={`/journal/${e.id}/`}>{e.data.title}</a></h3>
+          <p>{e.data.summary}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="cta-row" style="justify-content: flex-start;">
+      <a class="btn" href="/journal/">All journal entries</a>
+    </div>
+  </section>
+</Base>

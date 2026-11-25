@@ -29,9 +29,10 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
   <section>
     <div class="wrap prose">
       <dl class="facts">
+        <dt>Where</dt><dd>Between Heber and Holbrook, in Navajo County, Arizona</dd>
         <dt>Size</dt><dd>37 acres</dd>
         <dt>Elevation</dt><dd>About 5,700 ft, falling roughly 40 ft from east to west across the developed area</dd>
-        <dt>Rain</dt><dd>Roughly 12 inches a year</dd>
+        <dt>Rain</dt><dd>Roughly 12 inches a year, most of it in the summer monsoon</dd>
         <dt>Season</dt><dd>Roughly 120 to 140 frost-free days</dd>
         <dt>Winters</dt><dd>Cold</dd>
         <dt>Soil</dt><dd>Shallow and alkaline, over rock</dd>
@@ -61,8 +62,14 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
         into.
       </p>
       <p>
-        Our own testing so far amounts to a shovel and a handheld pH meter.
-        A lab soil test is on the list for phase 1.
+        What we've found on the ground is a little better than the map, at
+        least near the buildings. The water-line trench is about two feet
+        deep and never hit rock. The rock outcrop starts about 100 yards east
+        of the machine shed.
+      </p>
+      <p>
+        Our own testing so far amounts to that trench and a handheld pH
+        meter. A lab soil test is still to come.
       </p>
       <div class="photo-row cols-3">
         <Photo src={soilTrench} sizes={rowSizes} alt="A trench wall in red soil, with a harder, rockier layer beneath a few inches of loose soil">
@@ -84,19 +91,23 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
       <h2>Water</h2>
       <ul>
         <li>
-          <strong>Well and storage.</strong> The well plumbing has been
-          reworked, and the well feeds two 2,500-gallon storage tanks. This
-          is the one big job finished so far.
+          <strong>Well and storage.</strong> One well, 775 feet deep, giving
+          about 6 gallons a minute of alkaline water. A solar-powered
+          Grundfos pump lifts it into two 2,500-gallon tanks. The plumbing is
+          being rebuilt, and
+          <a href="/journal/rebuilding-the-well-plumbing/">the journal has that story</a>.
         </li>
         <li>
           <strong>Irrigation</strong> is designed to run from the tanks on
-          timers and not directly off the well, so the plants get through
-          the stretches when nobody is here.
+          timers and not directly off the well. For now the farm is tended
+          on weekends, so everything has to survive two weeks without a
+          visit.
         </li>
         <li>
           <strong>Swales</strong> are planned on contour, across the
           east-to-west slope, to catch runoff and give it time to soak in
-          around the planting areas. None are cut yet.
+          around the planting areas. None are cut yet. Where they go comes
+          from <a href="/journal/reading-the-water/">the water map</a>.
         </li>
         <li>
           <strong>Hügelkultur mounds</strong> are planned as raised beds over
@@ -108,16 +119,17 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
           the larger system along the orchard edge.
         </li>
         <li>
-          <strong>Rainwater catchment</strong> off every roof and into tanks
-          is planned for later.
+          <strong>Rainwater catchment.</strong> Eventually every roof feeds
+          a tank.
         </li>
       </ul>
       <div class="photo-row cols-3">
         <Photo src={trenchRun} sizes={rowSizes} alt="A narrow trench cut in a straight line through red soil and dry grass">
-          Trench for the water line, March 2026.
+          The water-line trench, March 2026. The previous owners started
+          it and we're finishing it.
         </Photo>
         <Photo src={tractorTrenching} sizes={rowSizes} alt="A small orange tractor with a backhoe parked beside a trench in red soil">
-          The Kubota on trenching duty, May 2026.
+          The Kubota finishing the trench, May 2026.
         </Photo>
         <Photo src={logsStaged} sizes={rowSizes} alt="Ponderosa and juniper logs lying on open ground">
           The previous owners' logs, set aside for the hügelkultur mounds.
@@ -135,14 +147,18 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
         swale planned along its uphill edge. The ground is probably compacted
         from years of horses, so it will need subsoiling before planting. It
         may also be more fertile than the rest, thanks to years of manure.
+        Planting is planned for spring 2027, with the trees on or beside the
+        hügelkultur berms.
       </p>
       <p>The planting list so far, chosen for alkaline soil, dry air and cold winters:</p>
       <ul>
         <li><strong>Asparagus.</strong> The most alkaline-tolerant crop on the list, productive for 15 to 20 years, and the earliest harvest of the year.</li>
         <li><strong>Jujube.</strong> Tolerates alkaline soil, drought, cold winters and hot summers, and can live more than 50 years.</li>
-        <li><strong>Apples.</strong> Cold-hardy varieties suited to the elevation.</li>
-        <li><strong>Lavender.</strong> Likes alkaline, well-drained soil, and feeds bees.</li>
-        <li><strong>Seaberry, elderberry and aronia.</strong> Candidates for a later berry layer. Which of them will tolerate this soil is something we still have to find out.</li>
+        <li><strong>Apples.</strong> Cold-hardy varieties on alkaline-tolerant rootstock.</li>
+        <li><strong>Herbs and alliums.</strong> An understory beneath the trees.</li>
+        <li><strong>Lavender.</strong> Likely. It likes alkaline, well-drained soil, and feeds bees.</li>
+        <li><strong>Berries.</strong> Elderberry, haskap and currants, planned for 2028.</li>
+        <li><strong>Windbreak and woodlot.</strong> Arizona cypress, northern catalpa and thornless honey locust, planned for 2028.</li>
         <li><strong>Wild harvest.</strong> Prickly pear and pinyon pine already grow here without any help.</li>
       </ul>
     </div>
@@ -154,7 +170,8 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
       <ul>
         <li><strong>Machine shed.</strong> Standing, and the working center of the property.</li>
         <li><strong>Barn.</strong> Standing, with the slab and interior still in progress.</li>
-        <li><strong>Solar.</strong> Off-grid, centered on the machine shed: an EG4 18kPV inverter and a 48V all-weather battery bank, with a buried feeder planned out to the barn.</li>
+        <li><strong>Solar.</strong> The well pump is solar-powered. Off-grid power for the buildings starts at the machine shed: an EG4 18kPV inverter and a 48V all-weather battery bank, with a buried feeder planned out to the barn.</li>
+        <li><strong>Septic.</strong> A permitted septic system is already in.</li>
         <li><strong>Tractor.</strong> A Kubota BX23S for trenching, subsoiling, grading and building mounds.</li>
         <li><strong>Internet.</strong> Starlink.</li>
       </ul>
@@ -174,42 +191,53 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
 
   <section>
     <div class="wrap prose">
-      <h2>The plan, in five phases</h2>
-      <p>
-        Phase 1 is under way. Everything after it is still ahead of us, and
-        the later phases have no dates yet.
-      </p>
-      <ol class="plan">
-        <li>
-          <b>Foundations.</b> <span class="tag">Under way</span><br />
-          Done: general cleanup, and reworking the well plumbing. Still to
-          do: soil testing, staking and cutting the first swales, building
-          the first hügelkultur mound, and fencing the first growing area.
-        </li>
-        <li>
-          <b>Observation and prep.</b> <span class="tag">Not started</span><br />
-          Watch where water actually runs during monsoon storms and adjust
-          the swales. Finish the barn floor. Prepare the orchard soil in the
-          fall with compost, mulch and possibly elemental sulfur, depending
-          on the soil test. Order bare-root trees.
-        </li>
-        <li>
-          <b>First plantings.</b> <span class="tag">Not started</span><br />
-          Asparagus, jujube and apples, on drip irrigation from the tanks.
-        </li>
-        <li>
-          <b>Expansion.</b> <span class="tag">Not started</span><br />
-          The berry layer and lavender. Perimeter fencing in stages, native
-          windbreaks, and chickens for orchard pest control once fencing and
-          water are solid.
-        </li>
-        <li>
-          <b>Long term.</b> <span class="tag">Not started</span><br />
-          Rainwater catchment off every roof. Bees, once there is enough
-          bloom. More soil building, until the growing area runs mostly on
-          mulch and captured rain. Eventually a house.
-        </li>
+      <h2>The plan</h2>
+      <p>The rules we're working by:</p>
+      <ol>
+        <li><strong>Water before biology.</strong> No planting until the water is boringly dependable.</li>
+        <li><strong>Mounds are mandatory.</strong> They build the root zone the soil doesn't have.</li>
+        <li><strong>Fence the growing area first,</strong> and the perimeter later, in phases.</li>
+        <li><strong>Set-and-forget over high-touch.</strong> Crops and systems have to get by on weekend visits.</li>
+        <li><strong>Rodent-proof everything we build.</strong></li>
       </ol>
+      <p>
+        The order follows the dependencies: mounds, a swale and fencing
+        first, then the orchard and lavender, then bees. These are plans,
+        and the dates will move if the water isn't ready.
+      </p>
+      <dl class="status">
+        <dt>2026</dt>
+        <dd>General cleanup. Rebuilding the well plumbing and tanks. <span class="tag">In progress</span></dd>
+        <dt>Winter 2027</dt>
+        <dd>
+          Start baseline monitoring: a rain gauge, soil-moisture sensors in a
+          mound and in a control bed, photo points, and a log of how much
+          water the well delivers. Join the University of Arizona Cooperative
+          Extension Master Gardener program.
+        </dd>
+        <dt>Spring 2027</dt>
+        <dd>
+          Rip the orchard rows. Plant asparagus and the orchard core of
+          jujube and apples, with an herb and allium understory, on drip
+          irrigation from the tanks. Cut the first swale on the orchard's uphill edge.
+        </dd>
+        <dt>Monsoon 2027</dt>
+        <dd>Watch and record how water moves, and adjust the earthworks.</dd>
+        <dt>Also 2027</dt>
+        <dd>Start building a small off-grid cabin, about 12 by 24 feet.</dd>
+        <dt>2028</dt>
+        <dd>
+          The apiary, inside a bear-proof electric fence. The windbreak and
+          woodlot. The berry layer. Perimeter fencing, in phases and
+          wildlife-friendly.
+        </dd>
+        <dt>2029 to 2036</dt>
+        <dd>
+          Every roof feeds a tank. Hard cider and fruit wine. A greenhouse,
+          kitchen garden and aquaponics once someone is living on site. Full
+          off-grid energy. Field days and demonstration projects.
+        </dd>
+      </dl>
     </div>
   </section>
 
@@ -219,6 +247,11 @@ const rowSizes = '(max-width: 44rem) 100vw, 24rem';
       <p>
         Time. We don't have enough of it. Nobody lives here yet, and so far
         the work has been cleanup and the well plumbing.
+      </p>
+      <p>
+        The plumbing we inherited. The joints had failed and rodents had
+        gotten into the tanks, so the first big job was one we hadn't
+        planned on.
       </p>
       <p>
         The neighboring ranch's cattle also get in, and have chewed through

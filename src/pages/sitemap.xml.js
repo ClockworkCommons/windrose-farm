@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const site = context.site.href.replace(/\/$/, '');
   const entries = await getCollection('journal');
-  const paths = ['/', '/story/', '/farm/', '/land/', '/seasons/', '/journal/'].concat(
+  const paths = ['/', '/story/', '/land/', '/farm/', '/seasons/', '/journal/'].concat(
     entries.map((e) => `/journal/${e.id}/`)
   );
   const urls = paths.map((p) => `  <url><loc>${site}${p}</loc></url>`).join('\n');

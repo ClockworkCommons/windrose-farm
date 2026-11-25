@@ -50,6 +50,8 @@ h3 { font-size: 1.25rem; }
 
 p { margin: 0 0 1em; }
 
+code { font-size: 0.9em; background: var(--parchment); border: 1px solid var(--line); border-radius: 3px; padding: 0.05em 0.3em; }
+
 a {
   color: var(--clay);
   text-decoration-thickness: 1px;
@@ -269,6 +271,10 @@ section + section { border-top: 1px solid var(--line); }
 .photo-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .photo-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
 .photo-row img { aspect-ratio: 4 / 3; object-fit: cover; }
+/* maps and diagrams: show the whole image, never crop */
+.photo-row.cols-1 { grid-template-columns: 1fr; }
+.photo-row.natural { align-items: start; }
+.photo-row.natural img { aspect-ratio: auto; object-fit: contain; }
 @media (max-width: 60rem) {
   .photo-row.cols-4 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -312,9 +318,12 @@ section + section { border-top: 1px solid var(--line); }
 .entry-list h3 a:hover { color: var(--clay); }
 .entry-list p { margin: 0; color: var(--ink-soft); }
 
-.article-body { max-width: var(--measure); padding-bottom: clamp(2.5rem, 6vw, 4rem); }
+.article-body { padding-bottom: clamp(2.5rem, 6vw, 4rem); }
+.article-body > * { max-width: var(--measure); }
 .article-body h2 { margin-top: 1.8em; }
-.article-body img { display: block; width: 100%; height: auto; border-radius: 3px; }
+/* images may run wider than the text; the height cap keeps portrait shots sensible */
+.article-body > p:has(img) { max-width: 60rem; }
+.article-body img { display: block; width: auto; max-width: 100%; height: auto; max-height: 36rem; border-radius: 3px; }
 .article-body img + em, .article-body p > img ~ em { font-size: 0.92rem; color: var(--ink-soft); }
 .article-body .signoff { margin-top: 2rem; font-style: italic; }
 

@@ -31,3 +31,14 @@ const fmt = (d: Date) =>
     </div>
   </article>
 </Base>
+
+<script>
+  // Let readers open any journal image at full size.
+  document.querySelectorAll('.article-body img').forEach((img) => {
+    const link = document.createElement('a');
+    link.href = img.currentSrc || img.src;
+    link.title = 'View larger';
+    img.replaceWith(link);
+    link.append(img);
+  });
+</script>

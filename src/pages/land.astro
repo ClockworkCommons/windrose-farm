@@ -1,263 +1,235 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Image } from 'astro:assets';
-import shedPhoto from '../assets/photos/shed-solar.webp';
+import Photo from '../components/Photo.astro';
+import shedPhoto from '../assets/photos/shed-solar-array.jpg';
 import soilTrench from '../assets/photos/soil-trench-bedrock.jpg';
 import soilMeter from '../assets/photos/soil-ph-meter.jpg';
-import soilInHand from '../assets/photos/soil-in-hand.jpg';
+import soilSurface from '../assets/photos/soil-surface.jpg';
 import trenchRun from '../assets/photos/trench-run.jpg';
 import tractorTrenching from '../assets/photos/tractor-trenching.jpg';
 import logsStaged from '../assets/photos/logs-staged.jpg';
 import waterTanks from '../assets/photos/water-tanks-solar.jpg';
 import barnTractor from '../assets/photos/barn-tractor.jpg';
 
-const duoW = [420, 700, 1100];
-const duoS = '(max-width: 40rem) 100vw, 32rem';
+const rowSizes = '(max-width: 44rem) 100vw, 24rem';
 ---
-<Base title="The Land — Windrose Farm" description="37 acres of Arizona high desert at 5,700 feet: shallow rocky soil, 12 inches of rain, and a patient plan to build abundance anyway.">
-  <section class="wrap article-header">
-    <p class="eyebrow">The Land</p>
-    <h1>Hard ground, honest plans</h1>
-    <p class="prose" style="color: var(--ink-soft);">
-      Many people would have seen an empty field. We saw possibility — and
-      then we did the soil survey, and saw exactly how much work possibility
-      was going to take.
+<Base
+  title="The Land: soil, water and the plan | Windrose Farm"
+  description="37 acres of Arizona high desert at 5,700 feet: bedrock at 8 to 20 inches, alkaline soil, about 12 inches of rain, and the five-phase plan for growing food on it."
+  image={soilTrench}
+>
+  <div class="wrap page-head">
+    <h1>The land</h1>
+    <p>
+      What we're working with, what has been done to it so far, and what is
+      planned. Last updated November 2026.
     </p>
-  </section>
+  </div>
 
-  <section class="wrap" style="padding-top: 0;">
-    <div class="fact-grid">
-      <div><span class="num">37</span><span class="label">acres</span></div>
-      <div><span class="num">5,700′</span><span class="label">elevation</span></div>
-      <div><span class="num">~130</span><span class="label">frost-free days</span></div>
-      <div><span class="num">~12″</span><span class="label">rain per year</span></div>
+  <section>
+    <div class="wrap prose">
+      <dl class="facts">
+        <dt>Size</dt><dd>37 acres</dd>
+        <dt>Elevation</dt><dd>About 5,700 ft, falling roughly 40 ft from east to west across the developed area</dd>
+        <dt>Rain</dt><dd>Roughly 12 inches a year</dd>
+        <dt>Season</dt><dd>Roughly 120 to 140 frost-free days</dd>
+        <dt>Winters</dt><dd>Cold</dd>
+        <dt>Soil</dt><dd>Shallow and alkaline, over rock</dd>
+      </dl>
+      <p class="note">
+        Soil figures on this page come from the NRCS Web Soil Survey. Rain
+        and season length are estimates until we have our own records.
+      </p>
     </div>
   </section>
 
-  <section class="section-alt">
+  <section>
     <div class="wrap prose">
-      <p class="eyebrow">Soil</p>
-      <h2>The honest starting point</h2>
+      <h2>Soil</h2>
       <p>
-        Per NRCS Web Soil Survey data, our dominant soils are the
-        Leanto&#8209;Bisoodi complex and the Mellenthin&#8209;Rock outcrop complex:
-        bedrock at 8–20 inches, very low infiltration, high calcium carbonate,
-        and roughly 1.2–1.7 inches of available water in the top 60 inches
-        of soil. That is not a footnote — it's a structural constraint.
+        The NRCS Web Soil Survey maps most of the property as two soil
+        complexes, Leanto-Bisoodi and Mellenthin-Rock outcrop. In practice
+        that means bedrock 8 to 20 inches down, very slow infiltration
+        (hydrologic group D), a lot of calcium carbonate, and roughly 1.2 to
+        1.7 inches of available water. NRCS quotes that last figure for a
+        standard 60-inch profile, and here most of that depth is rock.
       </p>
       <p>
-        It's also the reason the entire approach here is built around
-        <em>making</em> soil rather than assuming ground that's ready to plant:
-        hügelkultur mounds, contour swales, mulch, and compost. Working with
-        hard ground instead of glossing over it is exactly the kind of honesty
-        this farm is built on.
+        That's the hand we were dealt, so we plan around it. The idea is to
+        build soil on top of the ground with hügelkultur mounds, swales,
+        mulch and compost, instead of assuming there's soil ready to plant
+        into.
       </p>
-      <div class="photo-duo">
-        <figure>
-          <Image
-            src={soilTrench}
-            alt="A trench wall in red soil showing a hard pale caliche layer roughly a foot below the surface, with loose rock beneath it"
-            widths={duoW}
-            sizes={duoS}
-          />
-          <figcaption>
-            The survey, confirmed by shovel. That pale band about a foot down is
-            where roots stop and the real work begins.
-          </figcaption>
-        </figure>
-        <figure>
-          <Image
-            src={soilInHand}
-            alt="A gloved hand holding a scoop of dry, rocky red soil above the ground it came from"
-            widths={duoW}
-            sizes={duoS}
-          />
-          <figcaption>
-            What comes up on a shovel: more gravel than loam, and very little
-            organic matter holding it together.
-          </figcaption>
-        </figure>
-        <figure>
-          <Image
-            src={soilMeter}
-            alt="A handheld soil meter pushed into dry red soil, its display reading in the low eighties"
-            widths={duoW}
-            sizes={duoS}
-          />
-          <figcaption>
-            Testing across the production zone. Readings like these are why
-            elemental sulfur is on the autumn list.
-          </figcaption>
-        </figure>
+      <p>
+        Our own testing so far amounts to a shovel and a handheld pH meter.
+        A lab soil test is on the list for phase 1.
+      </p>
+      <div class="photo-row cols-3">
+        <Photo src={soilTrench} sizes={rowSizes} alt="A trench wall in red soil, with a harder, rockier layer beneath a few inches of loose soil">
+          The soil profile in a trench wall: loose red soil on top, a harder
+          and rockier layer below it.
+        </Photo>
+        <Photo src={soilSurface} sizes={rowSizes} alt="A dry shrub growing in bare red soil covered with small gravel">
+          The surface. Red, dry and gravelly.
+        </Photo>
+        <Photo src={soilMeter} sizes={rowSizes} alt="A handheld soil meter pushed into dry red soil, its display reading 8.2 pH">
+          A handheld meter reading pH 8.2, May 2026.
+        </Photo>
       </div>
     </div>
   </section>
 
-  <section class="wrap prose">
-    <p class="eyebrow">Water &amp; Soil-Building</p>
-    <h2>Catching every drop, building every inch</h2>
-    <ul>
-      <li>
-        <strong>Contour swales</strong> are being staked and cut to intercept and slow
-        runoff before it sheets off the property, recharging the soil around
-        planting zones. The land falls gently east to west — about 40 feet across
-        the developed area — and the swales follow that grain.
-      </li>
-      <li>
-        <strong>Hügelkultur mounds</strong>, built from ponderosa pine and juniper
-        logs — cut in a nearby forest by the previous owners and left here when
-        they went — soaked and capped with native soil, create raised,
-        moisture-retentive beds that compensate for the shallow, rocky ground.
-        The first prototype is going in between the barn and machine shed;
-        its lessons will shape the larger orchard-edge system.
-      </li>
-      <li>
-        <strong>Rainwater catchment</strong> is planned off every roof into storage
-        tanks — meaningful supplementation at twelve inches of rain a year.
-      </li>
-      <li>
-        <strong>Irrigation runs from tank storage on timers</strong>, not directly
-        off the well — so the farm survives a weekend of absence without loss.
-      </li>
-    </ul>
-    <div class="photo-duo">
-      <figure>
-        <Image
-          src={trenchRun}
-          alt="A narrow trench cut in a long straight line through red soil and dry grass"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          Trenching the water line. Every foot of this is cut through the same
-          rock the soil survey warned about.
-        </figcaption>
-      </figure>
-      <figure>
-        <Image
-          src={tractorTrenching}
-          alt="The small orange tractor cutting a trench line across open red ground"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          The Kubota doing the digging. Cutting on contour is slow going in
-          ground this rocky.
-        </figcaption>
-      </figure>
-      <figure>
-        <Image
-          src={logsStaged}
-          alt="Felled ponderosa and juniper logs lying staged on open ground, waiting to be buried"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          Ponderosa and juniper, cut in a nearby forest by the previous owners
-          and left behind. They'll be buried in the hügelkultur mounds — an
-          inheritance we didn't ask for, put to work.
-        </figcaption>
-      </figure>
+  <section>
+    <div class="wrap prose">
+      <h2>Water</h2>
+      <ul>
+        <li>
+          <strong>Well and storage.</strong> The well plumbing has been
+          reworked, and the well feeds two 2,500-gallon storage tanks. This
+          is the one big job finished so far.
+        </li>
+        <li>
+          <strong>Irrigation</strong> is designed to run from the tanks on
+          timers and not directly off the well, so the plants get through
+          the stretches when nobody is here.
+        </li>
+        <li>
+          <strong>Swales</strong> are planned on contour, across the
+          east-to-west slope, to catch runoff and give it time to soak in
+          around the planting areas. None are cut yet.
+        </li>
+        <li>
+          <strong>Hügelkultur mounds</strong> are planned as raised beds over
+          the shallow soil: logs soaked, then buried under native soil, to
+          hold moisture. The logs are ponderosa pine and juniper that the
+          previous owners cut in a nearby forest and left here. The first
+          mound will be a prototype between the barn and the machine shed,
+          close to the logs and to water. What we learn from it will shape
+          the larger system along the orchard edge.
+        </li>
+        <li>
+          <strong>Rainwater catchment</strong> off every roof and into tanks
+          is planned for later.
+        </li>
+      </ul>
+      <div class="photo-row cols-3">
+        <Photo src={trenchRun} sizes={rowSizes} alt="A narrow trench cut in a straight line through red soil and dry grass">
+          Trench for the water line, March 2026.
+        </Photo>
+        <Photo src={tractorTrenching} sizes={rowSizes} alt="A small orange tractor with a backhoe parked beside a trench in red soil">
+          The Kubota on trenching duty, May 2026.
+        </Photo>
+        <Photo src={logsStaged} sizes={rowSizes} alt="Ponderosa and juniper logs lying on open ground">
+          The previous owners' logs, set aside for the hügelkultur mounds.
+        </Photo>
+      </div>
     </div>
   </section>
 
-  <section class="section-alt">
+  <section>
     <div class="wrap prose">
-      <p class="eyebrow">The Orchard Site</p>
-      <h2>Planting what wants to live here</h2>
+      <h2>Orchard site and planting list</h2>
       <p>
-        The orchard is sited in a former horse exercise area — flat, upslope of
-        the barn and shed, next to existing water infrastructure, with a contour
-        swale planned along its uphill edge. The ground is likely compacted from
-        years of horses (subsoiling required) but potentially fertile from years
-        of manure. Every planting was chosen for alkaline, high-desert,
-        cold-winter conditions:
+        The orchard will go in a former horse exercise area. It is flat,
+        upslope of the barn and shed, and next to the water system, with a
+        swale planned along its uphill edge. The ground is probably compacted
+        from years of horses, so it will need subsoiling before planting. It
+        may also be more fertile than the rest, thanks to years of manure.
       </p>
+      <p>The planting list so far, chosen for alkaline soil, dry air and cold winters:</p>
       <ul>
-        <li><strong>Asparagus</strong> — the most alkaline-tolerant crop on the list, a 15–20 year productive lifespan, and the earliest harvest of the year</li>
-        <li><strong>Jujube</strong> — the standout pick; evolved for exactly these conditions, near-zero-maintenance once established, 50+ year lifespan</li>
-        <li><strong>Apples</strong> — cold-hardy varieties suited to the elevation</li>
-        <li><strong>Seaberry, elderberry &amp; aronia</strong> — an alkaline-tolerant berry layer</li>
-        <li><strong>Lavender</strong> — thrives in alkaline, well-drained soil, and doubles as bee forage</li>
-        <li><strong>Wild harvest</strong> — prickly pear and pinyon pine already grow here on their own</li>
+        <li><strong>Asparagus.</strong> The most alkaline-tolerant crop on the list, productive for 15 to 20 years, and the earliest harvest of the year.</li>
+        <li><strong>Jujube.</strong> Tolerates alkaline soil, drought, cold winters and hot summers, and can live more than 50 years.</li>
+        <li><strong>Apples.</strong> Cold-hardy varieties suited to the elevation.</li>
+        <li><strong>Lavender.</strong> Likes alkaline, well-drained soil, and feeds bees.</li>
+        <li><strong>Seaberry, elderberry and aronia.</strong> Candidates for a later berry layer. Which of them will tolerate this soil is something we still have to find out.</li>
+        <li><strong>Wild harvest.</strong> Prickly pear and pinyon pine already grow here without any help.</li>
       </ul>
     </div>
   </section>
 
-  <section class="wrap prose">
-    <p class="eyebrow">Infrastructure</p>
-    <h2>The bones of the place</h2>
-    <figure class="snapshot">
-      <Image
-        src={shedPhoto}
-        alt="The red machine shed with a row of solar panels on its green metal roof, under a clear high-desert sky"
-        widths={[640, 1024, 1600]}
-        sizes="(max-width: 72rem) 100vw, 66ch"
-      />
-      <figcaption>The machine shed, wearing the solar array that powers the working core of the farm.</figcaption>
-    </figure>
-    <ul>
-      <li><strong>Off-grid solar</strong> centered on the machine shed — an EG4 18kPV inverter and 48V all-weather battery bank, with a buried feeder planned out to the barn</li>
-      <li><strong>Well &amp; water distribution</strong>, rebuilt from the ground up, feeding two 2,500-gallon storage tanks</li>
-      <li><strong>Barn</strong> with slab and infrastructure underway</li>
-      <li><strong>Machine shed</strong>, established and anchoring the working core of the property</li>
-      <li><strong>Kubota BX23S tractor</strong> for the land work — subsoiling, mound-building, grading</li>
-      <li><strong>Starlink</strong>, because even a homestead measured in decades likes a weather radar</li>
-    </ul>
-    <div class="photo-duo">
-      <figure>
-        <Image
-          src={waterTanks}
-          alt="Two black water storage tanks standing beside a timber-framed solar array in open grassland"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          Storage and generation side by side — 5,000 gallons of buffer and the
-          panels that move it.
-        </figcaption>
-      </figure>
-      <figure>
-        <Image
-          src={barnTractor}
-          alt="The Kubota tractor parked inside the open barn, seen through the wide doorway"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          The Kubota BX23S, which does the subsoiling, the trenching, and most
-          of the mound-building.
-        </figcaption>
-      </figure>
+  <section>
+    <div class="wrap prose">
+      <h2>Buildings, power and equipment</h2>
+      <ul>
+        <li><strong>Machine shed.</strong> Standing, and the working center of the property.</li>
+        <li><strong>Barn.</strong> Standing, with the slab and interior still in progress.</li>
+        <li><strong>Solar.</strong> Off-grid, centered on the machine shed: an EG4 18kPV inverter and a 48V all-weather battery bank, with a buried feeder planned out to the barn.</li>
+        <li><strong>Tractor.</strong> A Kubota BX23S for trenching, subsoiling, grading and building mounds.</li>
+        <li><strong>Internet.</strong> Starlink.</li>
+      </ul>
+      <div class="photo-row cols-3">
+        <Photo src={shedPhoto} sizes={rowSizes} alt="The red machine shed with solar panels along its green metal roof">
+          The machine shed, with solar panels on the roof.
+        </Photo>
+        <Photo src={waterTanks} sizes={rowSizes} alt="Two black water storage tanks beside a timber-framed solar array in open grassland">
+          The storage tanks, beside a timber-framed solar array.
+        </Photo>
+        <Photo src={barnTractor} sizes={rowSizes} alt="An orange compact tractor parked inside the open barn">
+          The Kubota BX23S in the barn.
+        </Photo>
+      </div>
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="wrap">
-      <p class="eyebrow">The Roadmap</p>
-      <h2>Five phases, no hurry</h2>
-      <ol class="phase-list">
+  <section>
+    <div class="wrap prose">
+      <h2>The plan, in five phases</h2>
+      <p>
+        Phase 1 is under way. Everything after it is still ahead of us, and
+        the later phases have no dates yet.
+      </p>
+      <ol class="plan">
         <li>
-          <b>Foundational work</b>
-          <p>Finish the well system, soil testing, stake and cut swales, build the first hügelkultur mound, fence the initial production zone.</p>
+          <b>Foundations.</b> <span class="tag">Under way</span><br />
+          Done: general cleanup, and reworking the well plumbing. Still to
+          do: soil testing, staking and cutting the first swales, building
+          the first hügelkultur mound, and fencing the first growing area.
         </li>
         <li>
-          <b>Observation &amp; prep</b>
-          <p>Watch real water flow during monsoon storms and adjust. Consolidate barn-floor infrastructure. Fall soil prep — elemental sulfur, compost, mulch — and order bare-root orchard stock.</p>
+          <b>Observation and prep.</b> <span class="tag">Not started</span><br />
+          Watch where water actually runs during monsoon storms and adjust
+          the swales. Finish the barn floor. Prepare the orchard soil in the
+          fall with compost, mulch and possibly elemental sulfur, depending
+          on the soil test. Order bare-root trees.
         </li>
         <li>
-          <b>First plantings</b>
-          <p>Asparagus, jujube, and apples go in, watered by drip irrigation from tank storage.</p>
+          <b>First plantings.</b> <span class="tag">Not started</span><br />
+          Asparagus, jujube and apples, on drip irrigation from the tanks.
         </li>
         <li>
-          <b>Expansion — years 2–3</b>
-          <p>The berry layer and lavender. Phased perimeter fencing, native windbreaks, and chickens as orchard pest control once fencing and water are solid.</p>
+          <b>Expansion.</b> <span class="tag">Not started</span><br />
+          The berry layer and lavender. Perimeter fencing in stages, native
+          windbreaks, and chickens for orchard pest control once fencing and
+          water are solid.
         </li>
         <li>
-          <b>Long-term — years 3–10</b>
-          <p>Rainwater catchment off every roof. Bees, once orchard and lavender bloom can support them. Continued soil-building until the production zone runs largely on mulch and monsoon capture. Eventually, a dwelling and full energy independence.</p>
+          <b>Long term.</b> <span class="tag">Not started</span><br />
+          Rainwater catchment off every roof. Bees, once there is enough
+          bloom. More soil building, until the growing area runs mostly on
+          mulch and captured rain. Eventually a house.
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>What has gone wrong so far</h2>
+      <p>
+        Time. We don't have enough of it. Nobody lives here yet, and so far
+        the work has been cleanup and the well plumbing.
+      </p>
+      <p>
+        The neighboring ranch's cattle also get in, and have chewed through
+        at least one camera cord. Fencing is on the list.
+      </p>
+    </div>
+  </section>
+
+  <section class="next-step">
+    <div class="wrap">
+      <a class="btn" href="/farm/">Plans for the farm →</a>
     </div>
   </section>
 </Base>

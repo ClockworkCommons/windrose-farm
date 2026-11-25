@@ -1,99 +1,123 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Image } from 'astro:assets';
+import Photo from '../components/Photo.astro';
 import kevinPhoto from '../assets/photos/kevin-at-the-shed.webp';
 ---
-<Base title="Our Story — Windrose Farm" description="Windrose Farm began decades before the land was found — with Aunt Rosie, a compass rose, and a family's long dream of stewardship.">
-  <section class="wrap article-header">
-    <p class="eyebrow">Our Story</p>
-    <h1>It began decades before the land</h1>
+<Base
+  title="Our Story | Windrose Farm"
+  description="Where Windrose Farm came from: an aunt who kept bees from the age of sixteen, a long search, and 37 acres of Arizona high desert."
+>
+  <div class="wrap page-head">
+    <h1>Our story</h1>
+  </div>
+
+  <section>
+    <div class="wrap prose">
+      <p>
+        Windrose Farm did not begin with the purchase of land. It began
+        decades earlier.
+      </p>
+      <p>
+        One of the earliest inspirations was <strong>Aunt Rosie</strong>. She
+        took up beekeeping at sixteen and kept at it for the rest of her life.
+        On her farm in the Midwest she had a huge garden and a lot of fruit
+        trees, raised chickens, tapped her maples for syrup, and pressed her
+        apples for cider. She was proud that she farmed organically, and much
+        of what she grew went to the local soup kitchen. She was doing all of
+        this long before sustainable agriculture became fashionable.
+      </p>
+      <p>
+        Years later, after years of dreaming, planning, and searching, we
+        found 37 acres of windswept Arizona high desert. Many people would
+        have seen an empty field. We saw possibility.
+      </p>
+      <Photo
+        class="inline"
+        src={kevinPhoto}
+        alt="Kevin in a sun hat and sunglasses, smiling and giving a thumbs-up in front of the red machine shed"
+      >
+        Kevin, at the machine shed.
+      </Photo>
+      <p>
+        Our goal is not to create the perfect farm. Our goal is to become
+        better stewards every year. Some experiments will succeed. Others
+        won't. We'll share both.
+      </p>
+    </div>
   </section>
 
-  <section class="wrap article-body prose" style="padding-top: 0;">
-    <p>
-      Windrose Farm did not begin with the purchase of land. It began decades earlier.
-    </p>
-    <p>
-      One of the earliest inspirations was <strong>Aunt Rosie</strong>, whose lifelong
-      commitment to beekeeping, organic gardening, and caring for the land quietly
-      demonstrated what true stewardship looked like — long before sustainable
-      agriculture became fashionable. Her patience, generosity, and respect for
-      nature planted seeds that would eventually grow into Windrose Farm.
-    </p>
-    <p>
-      Years later, after years of dreaming, planning, and searching, we found
-      37 acres of windswept Arizona high desert. Many people would have seen an
-      empty field. We saw possibility.
-    </p>
-    <p>
-      Windrose Farm is the realization of that vision — a place where family,
-      stewardship, craftsmanship, and nature come together.
-    </p>
-    <figure class="snapshot">
-      <Image
-        src={kevinPhoto}
-        alt="A smiling family member in a sun hat giving a thumbs-up in front of the red machine shed on a bright day"
-        widths={[640, 1024, 1600]}
-        sizes="(max-width: 72rem) 100vw, 66ch"
-      />
-      <figcaption>Day one of a project measured in decades. So far, so good.</figcaption>
-    </figure>
-    <p>
-      Our goal is not to create the perfect farm. Our goal is to become better
-      stewards every year. Every beehive, every fruit tree, every garden bed,
-      every vineyard row, and every building is another chapter in a story we
-      hope continues for generations. Some experiments will succeed. Others
-      won't. We'll share both — because honest learning is every bit as valuable
-      as a successful harvest.
-    </p>
+  <section>
+    <div class="wrap prose">
+      <h2>Who we are</h2>
+      <p>
+        Windrose is a family project. I'm Kevin, and I write most of what's on
+        this site. Nobody lives on the land yet, so the work gets done on
+        trips out, fitted around everything else. That's also the main thing
+        that's gone wrong so far: time. We don't have enough of it.
+      </p>
+      <p>
+        If you've got questions, or you're working similar ground, write to
+        <a href="mailto:hello@windrose.farm">hello@windrose.farm</a>.
+      </p>
+    </div>
+  </section>
 
-    <hr class="rule" style="margin-block: 3rem;" />
+  <section>
+    <div class="wrap prose">
+      <h2>Why "Windrose"</h2>
+      <p>
+        The name comes from two places. One is the compass rose on a
+        navigator's chart, which is about finding your bearings and reading
+        the forces around you. The other is Aunt Rosie.
+      </p>
+      <p>
+        It also fits the property, where the prevailing wind shapes nearly
+        every design decision. The idea is to work with the land's seasons
+        and limits instead of fighting them.
+      </p>
+    </div>
+  </section>
 
-    <h2>Why "Windrose"?</h2>
-    <p>
-      The name draws on the traditional compass rose — guidance, exploration,
-      resilience, understanding the natural forces around us. It also reflects
-      the property itself, where prevailing winds shape nearly every design
-      decision. Rather than forcing the land to conform to us, Windrose Farm
-      grows in harmony with nature: following its seasons, respecting its
-      limits, embracing its opportunities.
-    </p>
-
-    <h2>A vision measured in decades</h2>
-    <p>
-      This is not a commercial farm or a lifestyle brand. It is first and
-      foremost a family legacy project built around stewardship, sustainability,
-      lifelong learning, and producing exceptional food through thoughtful,
-      organic practices. Over time, Windrose Farm will become:
-    </p>
-    <ul>
-      <li>A thriving organic apiary</li>
-      <li>An organic market garden</li>
-      <li>A diverse orchard</li>
-      <li>A small vineyard</li>
-      <li>Wildlife-friendly habitat</li>
-      <li>A demonstration of regenerative agriculture in Arizona's high country</li>
-      <li>A gathering place for family and friends</li>
-      <li>A legacy to be passed to future generations</li>
-    </ul>
-    <p>
-      The emphasis is always on building something <em>permanent</em>, not
-      something fast.
-    </p>
+  <section>
+    <div class="wrap prose">
+      <h2>What we're working toward</h2>
+      <p>
+        <strong>Our mission:</strong> to cultivate healthy land, healthy food,
+        and healthy community through careful stewardship, regenerative
+        agriculture, and a lifelong commitment to learning.
+      </p>
+      <p>
+        This is a family legacy project, not a commercial farm. Over time we
+        hope it becomes an apiary, a garden, an orchard and a small vineyard,
+        with habitat for wildlife and room for family and friends to gather,
+        and that it gets passed on to the next generation.
+      </p>
+      <p>The values we try to work by:</p>
+      <ul>
+        <li><strong>Stewardship.</strong> We are caretakers, not owners. The job is to leave the land healthier than we found it.</li>
+        <li><strong>Sustainability.</strong> Solar power, water conservation, compost, healthy soil.</li>
+        <li><strong>Organic practices.</strong> No formal certification, but organic principles wherever practical.</li>
+        <li><strong>Patience.</strong> Nature works in seasons and generations. So do we.</li>
+        <li><strong>Curiosity.</strong> The farm is a place to keep learning, experimenting and observing.</li>
+        <li><strong>Family.</strong> Everything begins and ends with family.</li>
+      </ul>
+    </div>
   </section>
 
   <section class="dedication">
     <div class="wrap">
-      <p class="eyebrow">Dedication</p>
       <h2>For Aunt Rosie</h2>
       <p>
-        Windrose Farm is lovingly dedicated to Aunt Rosie. Her lifelong
-        commitment to beekeeping, organic gardening, and caring for the land
-        helped inspire the vision for this farm. May every blossom visited by
-        our bees, every tree planted, every garden tended, and every harvest
-        gathered honor the quiet example she set. Her legacy continues to
-        bloom at Windrose Farm.
+        Windrose Farm is lovingly dedicated to Aunt Rosie. May every blossom
+        visited by our bees, every tree planted, every garden tended, and
+        every harvest gathered honor the quiet example she set.
       </p>
+    </div>
+  </section>
+
+  <section class="next-step">
+    <div class="wrap">
+      <a class="btn" href="/land/">More about the land →</a>
     </div>
   </section>
 </Base>

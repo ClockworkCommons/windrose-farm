@@ -34,26 +34,26 @@ That's it — the journal index and homepage pick it up automatically.
 
 ## Adding photos
 
-Drop the photo in `src/assets/photos/` with a descriptive filename, then
-reference it with Astro's `<Image>` component so it gets resized and
-compressed automatically:
+Drop the photo in `src/assets/photos/` with a descriptive filename, then use
+the `Photo` component. It resizes and compresses the image, and links it to a
+larger version so readers can click to enlarge.
 
 ```astro
 ---
-import { Image } from 'astro:assets';
+import Photo from '../components/Photo.astro';
 import myPhoto from '../assets/photos/my-photo.jpg';
 ---
-<figure class="snapshot">
-  <Image src={myPhoto} alt="Describe what's in the photo" widths={[640, 1024, 1600]}
-         sizes="(max-width: 72rem) 100vw, 66ch" />
-  <figcaption>An optional caption.</figcaption>
-</figure>
+<Photo class="inline" src={myPhoto} alt="Describe what's in the photo">
+  A plain caption: what it is and when it was taken.
+</Photo>
 ```
 
-Two styles are available: `.snapshot` for a photo inside an article column,
-and `.photo-band` for a full-width edge-to-edge band (see the homepage).
-Put photos in `src/assets/`, not `public/` — only `src/assets/` gets
-optimized.
+For several photos side by side, wrap them in
+`<div class="photo-row cols-3">` (or `cols-2`). In journal entries, plain
+markdown images work: `![alt text](../../assets/photos/my-photo.jpg)`.
+
+Captions should state only what is known: what the photo shows and the date.
+Photos staged in the root `photos/` folder are git-ignored and never published.
 
 ## Deploying
 
@@ -85,10 +85,10 @@ or the real domain.
 
 ## Structure
 
-- `src/pages/` — the pages: home, story, farm, land, journal, 404
+- `src/pages/` — the pages (home, story, farm, land, seasons, journal, 404) plus the RSS feed and sitemap
 - `src/content/journal/` — journal entries (markdown)
 - `src/assets/photos/` — property photography (optimized at build time)
-- `src/components/` — header, footer, and the windrose compass mark
+- `src/components/` — header, footer, the `Photo` component, and the windrose compass mark
 - `src/styles/global.css` — the entire design system (colors, type, layout)
 - `public/` — favicon and any static files/photos
 

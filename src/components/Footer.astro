@@ -1,13 +1,14 @@
 ---
-import Windrose from './Windrose.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="wrap">
-    <Windrose />
     <p class="motto-line">Growing in Nature's Direction.</p>
-    <p>Windrose Farm · Heber, Arizona · 5,700&nbsp;ft</p>
-    <p class="rosie">Dedicated with love to Aunt Rosie.</p>
-    <p>© {year} Windrose Farm. A family legacy project.</p>
+    <p>Windrose Farm · Navajo County, Arizona · about 5,700&nbsp;ft</p>
+    <p>
+      <a href="mailto:hello@windrose.farm">hello@windrose.farm</a> ·
+      <a href="/rss.xml">RSS feed</a>
+    </p>
+    <p>Dedicated to Aunt Rosie. © {year} Windrose Farm.</p>
   </div>
 </footer>

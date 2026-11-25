@@ -1,130 +1,104 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Image } from 'astro:assets';
+import Photo from '../components/Photo.astro';
 import hoopHouse from '../assets/photos/hoop-house.jpg';
-import shedSolarArray from '../assets/photos/shed-solar-array.jpg';
-
-const duoW = [420, 700, 1100];
-const duoS = '(max-width: 40rem) 100vw, 32rem';
 ---
-<Base title="The Farm — Windrose Farm" description="The four focus areas of Windrose Farm: an organic apiary, organic gardens, a high-desert orchard, and a small vineyard — designed as one interconnected system.">
-  <section class="wrap article-header">
-    <p class="eyebrow">The Farm</p>
-    <h1>One ecosystem, four gardens</h1>
-    <p class="prose" style="color: var(--ink-soft);">
-      Nothing at Windrose stands alone. The apiary, gardens, orchard, and
-      vineyard are designed as a single interconnected system, where every
-      part strengthens the others.
-    </p>
-  </section>
-
-  <section class="section-alt">
-    <div class="wrap prose">
-      <div class="glyph" style="font-size: 2rem;">🐝</div>
-      <h2>Apiary</h2>
-      <p>
-        One of the defining features of Windrose Farm — and, in a real sense,
-        its heart. The goals are simple and stubborn:
-      </p>
-      <ul>
-        <li>Healthy honeybee colonies</li>
-        <li>Pollination of the orchard and gardens</li>
-        <li>Raw local honey</li>
-        <li>Beeswax products</li>
-        <li>Native pollinator habitat</li>
-        <li>Continuous seasonal forage</li>
-      </ul>
-      <p>
-        The emphasis is always on healthy bees and a healthy ecosystem. The
-        bees arrive when the land is ready for them — once orchard blossoms and
-        lavender can carry a colony through the season, closing the loop the
-        farm's own design philosophy calls for.
-      </p>
-    </div>
-  </section>
-
-  <section class="wrap prose">
-    <div class="glyph" style="font-size: 2rem;">🌱</div>
-    <h2>Gardens</h2>
+<Base
+  title="The Farm: what we plan to grow | Windrose Farm"
+  description="The orchard, gardens, apiary and vineyard planned for Windrose Farm, and where each one actually stands. So far, all four are plans."
+>
+  <div class="wrap page-head">
+    <h1>What we plan to grow</h1>
     <p>
-      Vegetables, herbs, flowers, and perennial crops grown with regenerative
-      methods: compost, drip irrigation, mulching, companion planting, and
-      pollinator-friendly design. The primary purpose is feeding the family
-      while continually improving soil health — every season's garden should
-      leave the ground better than it found it.
+      None of this exists yet. These are the four things we intend to build,
+      roughly in the order the land will allow, with where each one stands
+      as of November 2026.
     </p>
-    <figure class="snapshot">
-      <Image
-        src={hoopHouse}
-        alt="The bare steel hoop frame of a greenhouse standing in open ground, its covering not yet fitted"
-        widths={duoW}
-        sizes={duoS}
-      />
-      <figcaption>
-        The hoop house, abandoned by the previous owners and still standing.
-        Bringing it back is part of the plan — at 5,700 feet with a 120-day
-        season, protected growing space buys weeks at both ends.
-      </figcaption>
-    </figure>
-  </section>
+  </div>
 
-  <section class="section-alt">
+  <section>
     <div class="wrap prose">
-      <div class="glyph" style="font-size: 2rem;">🍎</div>
       <h2>Orchard</h2>
+      <p><span class="tag">Site chosen · nothing planted</span></p>
       <p>
-        A protected orchard inside an elk-resistant enclosure, featuring fruit
-        and nut trees selected specifically for northern Arizona's short
-        seasons and alkaline soil. It integrates fruit trees, nut trees,
-        pollinator habitat, nitrogen-fixing plants, perennial groundcovers,
-        and beekeeping — intended as a resilient ecosystem, not simply rows
-        of fruit trees.
+        A protected orchard inside an elk-resistant enclosure, with fruit and
+        nut trees chosen for northern Arizona's short season and alkaline
+        soil. The plan mixes the trees with pollinator habitat,
+        nitrogen-fixing plants and perennial groundcovers, so it works as a
+        small ecosystem and not only as rows of fruit trees.
       </p>
       <p>
-        The first plantings — asparagus, jujube, and cold-hardy apples — were
-        chosen because they genuinely want to live here. You can read more
-        about how we chose them on <a href="/land/">The Land</a>.
+        The first plantings will be asparagus, jujube and cold-hardy apples.
+        The site and the planting list are on <a href="/land/">The Land</a>.
       </p>
     </div>
   </section>
 
-  <section class="wrap prose">
-    <div class="glyph" style="font-size: 2rem;">🍇</div>
-    <h2>Vineyard</h2>
-    <p>
-      A small vineyard, serving as both a learning experience and a source of
-      grapes for small-batch winemaking. The purpose is craftsmanship,
-      education, and enjoyment — not commercial production. Like everything
-      here, it's an experiment we expect to learn from as much as harvest from.
-    </p>
+  <section>
+    <div class="wrap prose">
+      <h2>Gardens</h2>
+      <p><span class="tag">Not started</span></p>
+      <p>
+        Vegetables, herbs, flowers and perennial crops, grown with compost,
+        drip irrigation, mulch and companion planting. The main purpose is
+        feeding the family while improving the soil.
+      </p>
+      <Photo
+        class="inline"
+        src={hoopHouse}
+        alt="The bare hoop frame of a greenhouse standing in open ground, its plastic cover torn away"
+      >
+        The hoop house, abandoned by the previous owners and still standing.
+        Bringing it back is part of the plan. With a short season, covered
+        growing space adds weeks at both ends.
+      </Photo>
+    </div>
   </section>
 
-  <section class="section-alt">
+  <section>
+    <div class="wrap prose">
+      <h2>Apiary</h2>
+      <p><span class="tag">Not started · years away</span></p>
+      <p>
+        Bees come last. The plan is to bring in hives once the orchard and
+        lavender are blooming and can help feed them. When that day comes,
+        the goals are healthy colonies, pollination for the orchard and
+        gardens, raw local honey and beeswax, and habitat for native
+        pollinators as well.
+      </p>
+      <p>
+        This is the part of the farm that comes most directly from
+        <a href="/story/">Aunt Rosie</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Vineyard</h2>
+      <p><span class="tag">Not scheduled</span></p>
+      <p>
+        A small vineyard, for learning and for small-batch winemaking. It
+        isn't on the five-phase plan yet.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>How the pieces fit</h2>
+      <p>
+        The four are meant to work as one system. Bees pollinate the orchard
+        and the orchard feeds the bees. Compost feeds the gardens. Trees slow
+        the wind, and better soil holds more water. That is the design, and
+        whether it works here is what this site will record.
+      </p>
+    </div>
+  </section>
+
+  <section class="next-step">
     <div class="wrap">
-      <p class="eyebrow">The Systems Philosophy</p>
-      <h2>Every system strengthens the others</h2>
-      <ul class="loop-list">
-        <li>Bees pollinate orchard blossoms.</li>
-        <li>Orchard blossoms feed the bees.</li>
-        <li>Compost feeds the gardens.</li>
-        <li>Gardens support pollinators.</li>
-        <li>Trees reduce wind.</li>
-        <li>Healthy soils retain water.</li>
-        <li>Native plants support wildlife.</li>
-        <li>Solar power supports off-grid infrastructure.</li>
-      </ul>
-      <figure class="snapshot" style="max-width: var(--measure);">
-        <Image
-          src={shedSolarArray}
-          alt="Solar panels mounted along the green metal roof of the red machine shed under a clear sky"
-          widths={duoW}
-          sizes={duoS}
-        />
-        <figcaption>
-          The machine shed carries the array that runs the well pump, the
-          irrigation timers, and eventually the barn.
-        </figcaption>
-      </figure>
+      <a class="btn" href="/seasons/">See the seasons →</a>
     </div>
   </section>
 </Base>

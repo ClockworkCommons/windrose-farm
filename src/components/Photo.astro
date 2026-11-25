@@ -1,0 +1,21 @@
+---
+// One photo with an optional caption. Clicking opens a larger version.
+import { Image, getImage } from 'astro:assets';
+
+const {
+  src,
+  alt,
+  class: className = '',
+  widths = [480, 800, 1200],
+  sizes = '(max-width: 44rem) 100vw, 36rem',
+  loading = 'lazy',
+} = Astro.props;
+
+const full = await getImage({ src, width: Math.min(src.width, 2000) });
+---
+<figure class={`photo ${className}`}>
+  <a href={full.src} title="View larger">
+    <Image src={src} alt={alt} widths={widths} sizes={sizes} loading={loading} />
+  </a>
+  {Astro.slots.has('default') && <figcaption><slot /></figcaption>}
+</figure>

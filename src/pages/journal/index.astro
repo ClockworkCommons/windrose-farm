@@ -9,27 +9,30 @@ const entries = (await getCollection('journal')).sort(
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
-<Base title="Journal — Windrose Farm" description="Field notes from Windrose Farm — successes, failures, and everything we're learning while building a regenerative farm in Arizona's high country.">
-  <section class="wrap article-header">
-    <p class="eyebrow">Journal</p>
-    <h1>Notes from the field</h1>
-    <p class="prose" style="color: var(--ink-soft);">
-      A running record of the farm as it takes shape — the experiments, the
-      weather, the wins, and the lessons. Some entries will report successes.
-      Others won't. Both are the point.
+<Base
+  title="Journal | Windrose Farm"
+  description="Dated notes from Windrose Farm, a homestead being built on hard ground in Arizona's high desert."
+>
+  <div class="wrap page-head">
+    <h1>Journal</h1>
+    <p>
+      Dated notes, written when something happens. To follow along, use the
+      <a href="/rss.xml">RSS feed</a> or write to
+      <a href="mailto:hello@windrose.farm">hello@windrose.farm</a>.
     </p>
-  </section>
+  </div>
 
-  <section class="wrap" style="padding-top: 0;">
-    <ul class="entry-list">
-      {entries.map((e) => (
-        <li class="entry-card">
-          <time datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
-          {e.data.phase && <span class="entry-meta"> · {e.data.phase}</span>}
-          <h3><a href={`/journal/${e.id}/`}>{e.data.title}</a></h3>
-          <p>{e.data.summary}</p>
-        </li>
-      ))}
-    </ul>
+  <section>
+    <div class="wrap">
+      <ul class="entry-list">
+        {entries.map((e) => (
+          <li>
+            <time datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
+            <h3><a href={`/journal/${e.id}/`}>{e.data.title}</a></h3>
+            <p>{e.data.summary}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   </section>
 </Base>

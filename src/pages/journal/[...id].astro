@@ -16,20 +16,18 @@ const { Content } = await render(entry);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
-<Base title={`${entry.data.title} — Windrose Farm Journal`} description={entry.data.summary}>
+<Base title={`${entry.data.title} | Windrose Farm Journal`} description={entry.data.summary}>
   <article>
-    <header class="wrap article-header">
-      <p class="eyebrow">
-        <a href="/journal/" style="color: inherit; text-decoration: none;">Journal</a>
-        {entry.data.phase && ` · ${entry.data.phase}`}
-      </p>
+    <header class="wrap page-head">
+      <p class="eyebrow"><a href="/journal/" style="color: inherit; text-decoration: none;">Journal</a></p>
       <h1>{entry.data.title}</h1>
       <time class="entry-meta" datetime={entry.data.date.toISOString()}>{fmt(entry.data.date)}</time>
     </header>
-    <div class="wrap article-body prose">
-      <Content />
-      <hr class="rule" style="margin-block: 3rem;" />
-      <p><a href="/journal/">← Back to the journal</a></p>
+    <div class="wrap">
+      <div class="article-body">
+        <Content />
+        <p><a href="/journal/">← All journal entries</a></p>
+      </div>
     </div>
   </article>
 </Base>
